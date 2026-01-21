@@ -81,7 +81,7 @@ if __name__ == '__main__':
     if not modules_present:
         print("[!] Please install the necessary modules")
         print("Exiting.")
-        exit(0)
+        exit(1)
     print('')
     generate_graph()
     print('')
