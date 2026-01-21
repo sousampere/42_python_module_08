@@ -6,7 +6,8 @@ import os
 if __name__ == '__main__':
     print('ORACLE STATUS: Reading the Matrix...\n')
     load_dotenv('.env.example')
-    variables = ['MATRIX_MODE', 'DATABASE_URL', 'API_KEY', 'LOG_LEVEL', 'ZION_ENDPOINT']
+    variables = ['MATRIX_MODE', 'DATABASE_URL', 'API_KEY',
+                 'LOG_LEVEL', 'ZION_ENDPOINT']
     for var in variables:
         result = os.getenv(var)
         if result is None:
@@ -24,5 +25,5 @@ if __name__ == '__main__':
     print('[OK] No hardcoded secrets detected')
     print('[OK] .env file properly configured')
     print('[OK] Production overrides available')
-    
+
     print('\nThe Oracle sees all configurations.')
