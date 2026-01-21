@@ -1,0 +1,18 @@
+
+# Installation: pip install -e .
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "loading"
+version = "1.0"
+description = "The ex1 project"
+authors = [
+    {name = "gtourdia"}
+]
+dependencies = [
+    "requests",
+    "pandas",
+    "numpy",
+    "matplotlib"
+]
