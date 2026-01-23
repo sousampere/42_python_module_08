@@ -3,13 +3,13 @@
 import importlib
 
 
-def generate_graph():
+def generate_graph() -> None:
     # Generating data points
     # Those are 1000 random values
     print('Analyzing Matrix data...')
     data_points = np.random.randn(1000)
 
-    # Converting datapoints from numpy to dataframes fro pandas
+    # Converting datapoints from numpy to dataframes for pandas
     df = pd.DataFrame(data_points, columns=['Data'])
     print('Processing 1000 data points...')
 
@@ -23,10 +23,13 @@ def generate_graph():
     plt.plot(df['Time'], df['Data'], color='green', linewidth=0.4)
 
     print('Generating visualization...')
+    # Save as...
     plt.savefig('matrix_analysis.png')
+    return None
 
 
 def package_comparison(package) -> str:
+    # Checks the package version and compare it to the expected one
     try:
         name = package.__name__
         with open('requirements.txt', 'r') as rq:
@@ -45,6 +48,7 @@ if __name__ == '__main__':
     print('LOADING STATUS: Loading programs...')
     print('')
     print('Checking dependencies:')
+    # Checks dependencies. Print uninstalled packages
     try:
         pd = importlib.import_module('pandas')
         name = getattr(pd, '__name__', 'n/a')

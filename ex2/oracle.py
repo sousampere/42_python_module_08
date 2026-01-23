@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+except Exception as e:
+    print(f'Missing module dotenv: {e}.')
+    print('Install using "python3 -m pip install python-dotenv"')
+    print('-> Exiting')
+    exit()
 import os
 
 if __name__ == '__main__':

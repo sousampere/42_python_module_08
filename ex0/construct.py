@@ -8,6 +8,8 @@ import site
 def matrix_status(is_venv: bool, python: str, package: str,
                   env_path: str) -> None:
     """Prints the env, if it is a venv or not"""
+    """Doing basic parsing from different"""
+    """functions to get the expected data"""
     if (is_venv):
         status = "Welcome to the construct"
     else:
@@ -36,9 +38,12 @@ Package installation path:\n""" + package)
 
 if __name__ == '__main__':
     if 'VIRTUAL_ENV' in os.environ:
+        """Print a success venv message"""
+        # If we are in a venv, the VIRTUAL_ENV variable will be set
         is_venv = True
         venv_name = os.path.basename(sys.prefix)
     else:
+        """Print a success real env message"""
         is_venv = False
         venv_name = None
     python = sys.executable
